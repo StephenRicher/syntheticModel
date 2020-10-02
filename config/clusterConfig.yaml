@@ -17,23 +17,8 @@ lammps:
 processAllLammps:
   time : 360
 
-mergeReplicates:
-  time : 15
-
-create_gif:
+createGIF:
   time : 60
-
-filterXYZ:
-  time : 20
-
-plotTUCorrelation:
-  time : 10
-
-createContactMatrix:
-  time : 10
-
-plotRG:
-  time : 15
 
 homer2H5:
   time : 15
