@@ -1,0 +1,63 @@
+# Simulation output directory - will be created if neccessary.
+workdir: /home/u/sr467/scratch/projects/syntheticModel/analysis
+
+reps: 100
+bases_per_bead: 3000
+monomers: 10
+
+coeffs: ../config/pair_coeffs.txt
+
+# If synthetic is provided all genome and track configuration is ignored.
+syntheticSequence :
+    subCluster30  : ../sequences/syntheticSequence-subCluster30.txt
+    subCluster50  : ../sequences/syntheticSequence-subCluster50.txt
+    subCluster70  : ../sequences/syntheticSequence-subCluster70.txt
+    subCluster90  : ../sequences/syntheticSequence-subCluster90.txt
+    subCluster110 : ../sequences/syntheticSequence-subCluster110.txt
+
+# Set True to exclude timepoints where both TU pairs are inactive when '
+# computing correlation.
+ignoreZeroPair : False
+
+# Control randomess at various stages of pipeline.
+# If all set to False then each rep will be identical for a given seed.
+random :
+    seed : 42
+    walk : False
+    sequence : False        # Set True to generate new bead sequence per rep
+    initialConform : False  # Set True to generate new initial conformation per rep
+    monomerPositions : True # Set True to randomise monomer positions per rep
+    simulation : True       # Set True to vary simulation conditions per rep
+
+# Define simulation box dimensions
+box :
+    xlo: -50
+    xhi: 50
+    ylo: -50
+    yhi: 50
+    zlo: -50
+    zhi: 50
+
+# LAMMPS config (rule: lammps)
+lammps :
+    restart:  0       # Set restart to 0 to turn off
+    timestep: 500
+    warm_up:  500000
+    sim_time: 1000000
+
+HiC :
+    colourMap : 'Purples'
+    dpi : 300
+    log : True
+    binsize : 6000
+
+# Define confguration for plotting Radius of Gyration
+plotRG :
+    dpi : 300
+    confidence : 0.95
+
+# Cluster only - group certain jobs (e.g. lammps simulations / post-processing)
+# into a single job submission. Some clusters be default assign a job all
+# threads even for single-thread operation. Therefore it may by quicker to
+# run all replicates in parallel in one job rather than have wasted threads.
+groupJobs: False
