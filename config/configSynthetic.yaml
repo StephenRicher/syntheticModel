@@ -14,6 +14,8 @@ syntheticSequence :
     subCluster70  : ../sequences/syntheticSequence-subCluster70.txt
     subCluster90  : ../sequences/syntheticSequence-subCluster90.txt
     subCluster110 : ../sequences/syntheticSequence-subCluster110.txt
+    subCluster130 : ../sequences/syntheticSequence-subCluster130.txt
+    subCluster150 : ../sequences/syntheticSequence-subCluster150.txt
 
 # Set True to exclude timepoints where both TU pairs are inactive when '
 # computing correlation.
