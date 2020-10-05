@@ -27,7 +27,7 @@ random :
     seed : 42
     walk : False
     sequence : False        # Set True to generate new bead sequence per rep
-    initialConform : False  # Set True to generate new initial conformation per rep
+    initialConform : True   # Set True to generate new initial conformation per rep
     monomerPositions : True # Set True to randomise monomer positions per rep
     simulation : True       # Set True to vary simulation conditions per rep
 
